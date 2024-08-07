@@ -2,12 +2,12 @@ const fs = require('fs');
 const csv = require('csv-parser');
 const axios = require('axios');
 
-// Configuración
+// Configuration
 const apiUrl = 'https://rest.iad-0X.braze.com/users/delete'; 
 const apiKey = 'your_API_Key';
 const batchSize = 50; 
 
-// Función para leer el archivo CSV
+// CSV reader function
 const readCSV = (filePath) => {
   return new Promise((resolve, reject) => {
     const externalIds = [];
@@ -25,7 +25,7 @@ const readCSV = (filePath) => {
   });
 };
 
-// Función para eliminar usuarios en lotes
+// Delete users batches function
 const deleteUsersInBatches = async (externalIds) => {
   for (let i = 0; i < externalIds.length; i += batchSize) {
     const batch = externalIds.slice(i, i + batchSize);
@@ -45,7 +45,7 @@ const deleteUsersInBatches = async (externalIds) => {
   }
 };
 
-// Ejecutar el script
+// Here you will execute your functions
 const filePath = 'path/users.csv';
 
 readCSV(filePath)
