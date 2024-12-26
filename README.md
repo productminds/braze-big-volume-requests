@@ -2,7 +2,7 @@
 
 <span style="color:red">**PROBLEM:**</span> You need to use an API Braze endpoint but there is a limit on how many user’s id you can send per request. If you want to send more than 30k users on a request that the limit is 50 you cannot copy&paste each batch of 50 because you will lose your time (and patience)
 
-<span style="color:green">**SOLUTION:**</span> With ChatGPT’s help, I developed a script to automate this process.
+<span style="color:green">**SOLUTION:**</span> A script was developed to automate this process.
 
 <span style="color:yellow">**DISCLAIMER:**</span> I’m trying to be as general as I can but the original use case was: A CSV of 30k users was incorrectly uploaded to a Braze dashboard and I wanted to delete it but the endpoint `https://rest.iad-0x.braze.com/users/delete`  has this limit of 50 user deletes per request. The idea is that it could be useful for similar future issues.
 
